@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Formatting with JavaScript</title>
+    <script>
+        function formatString() {
+            var str = "Hello, welcome to the world of JavaScript!";
+
+            // Formatting with various styles
+            var formattedString = 
+                "<b>" + str + "</b><br>" +   // Bold
+                "<i>" + str + "</i><br>" +   // Italic
+                "<u>" + str + "</u><br>" +   // Underline
+                "<strike>" + str + "</strike><br>" +   // Strikethrough
+                "<a href='https://www.example.com' target='_blank'>" + str + "</a>";  // Hypertext link
+
+            // Display formatted string in the 'result' div
+            document.getElementById("result").innerHTML = formattedString;
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript String Formatting</h2>
+    <button onclick="formatString()">Display Formatted String</button>
+    <div id="result"></div>
+</body>
+</html>

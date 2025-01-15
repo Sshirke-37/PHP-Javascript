@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Name Input</title>
+    <script>
+        // Function to change text style when name is entered
+        function changeStyle() {
+            var studentName = document.getElementById("studentName").value;
+            var nameDisplay = document.getElementById("nameDisplay");
+
+            if (studentName !== "") {
+                nameDisplay.textContent = "Hello, " + studentName;
+                nameDisplay.style.color = "red";
+                nameDisplay.style.fontSize = "18px";
+            }
+        }
+
+        // Function to show image when input is empty and clicked
+        function showImage() {
+            var studentName = document.getElementById("studentName").value;
+            if (studentName === "") {
+                var img = document.createElement("img");
+                img.src = "https://via.placeholder.com/150";
+                img.id = "displayImage";
+                img.style.width = "150px";
+                img.style.height = "150px";
+                img.onmouseover = function() {
+                    img.style.width = "200px";
+                    img.style.height = "200px";
+                };
+                img.onmouseout = function() {
+                    img.style.width = "150px";
+                    img.style.height = "150px";
+                };
+                document.getElementById("imageContainer").appendChild(img);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <h2>Enter Your Name</h2>
+    <input 
+        type="text" 
+        id="studentName" 
+        oninput="changeStyle()" 
+        onfocus="showImage()" 
+        placeholder="Enter student name">
+    
+    <div id="nameDisplay"></div>
+    <div id="imageContainer"></div>
+
+</body>
+</html>
